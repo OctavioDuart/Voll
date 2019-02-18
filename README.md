@@ -8,7 +8,7 @@ npm e bower - para baixar as dependências
 node  - para subir o servidor 
 
 mongo - para subir o banco de dados 
-
+___________________________________________________________________________________________________________________________
 Passo a Passo : 
 
 1º Baixando o projeto :
