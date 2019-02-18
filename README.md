@@ -1,6 +1,12 @@
 # Voll
 Voll Test
 
+Para rodar o projeto é necessário que você tenha instalado em sua máquina :
+
+npm e bower - para baixar as dependências
+node  - para subir o servidor 
+mongo - para subir o banco de dados 
+
 Passo a Passo : 
 
 1º Baixando o projeto :
@@ -14,11 +20,12 @@ ________________________________________________________________________________
   
   Baixando as depêndencias do servidor :
   
-  Com o terminal vá até o nível do arquivo package.json e digite o comando npm i , aguarde o término da instalação .
+  Com o terminal vá até o nível do arquivo package.json e digite o comando npm i , aguarde o término da instalação . depois
+  inicie o servidor do mongo . 
 
   Iniciando o Servidor : 
 
-  Com as dependências ja instaladas digite: node start.js um log com as mensagens:
+  Com as dependências ja instaladas e o banco iniciado digite: node start.js um log com as mensagens:
     
     'Servidor inciado com sucesso na porta  8000'
     'Conexão com o banco de dados estabelecida com suecesso'
