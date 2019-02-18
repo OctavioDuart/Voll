@@ -4,7 +4,9 @@ Voll Test
 Para rodar o projeto é necessário que você tenha instalado em sua máquina :
 
 npm e bower - para baixar as dependências
+
 node  - para subir o servidor 
+
 mongo - para subir o banco de dados 
 
 Passo a Passo : 
