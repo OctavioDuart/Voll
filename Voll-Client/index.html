@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Voll Solutions Teste</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./style/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="./bower_components/angular-toastr/dist/angular-toastr.css" />
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Karla:700" rel="stylesheet" />
+    <script src="./bower_components/angular/angular.min.js"></script>
+    <script src="./bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="./js/controller_home.js"></script>
+</head>
+
+<body ng-controller="myCtrl as vm">
+    <header class="navbarTop col-sm-12">
+        <button class="btn btn-dark">Voll</button>
+    </header>
+
+    <form>
+        <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" class="form-control" id="name" aria-describedby="emailHelp" ng-model="vm.data.name" />
+        </div>
+
+        <div class="form-group">
+            <label for="url">URL da Capa</label>
+            <input type="text" class="form-control" id="url" aria-describedby="emailHelp" ng-model="vm.data.url">
+        </div>
+
+        <div class="form-group">
+            <label for="description">Descrição do filme - (Máx de 500 caracteres)</label>
+            <textarea class="form-control" id="description" rows="5" maxlength="500" ng-model="vm.data.description"></textarea>
+        </div>
+
+        <button ng-click="vm.registerMovie(vm.data)" type="button" class="btn btn-success">Registrar</button>
+        <button ng-click="vm.cancelRegister()" type="button" class="btn btn-danger">Cancelar</button>
+    </form>
+
+    <div class="card" ng-repeat="movie in vm.movies" ng-if="vm.movies.length">
+        <div class="divImg">
+            <img src="{{movie.url}}" class="card-img-top" alt="Capa do filme {{movie.name}}" />
+        </div>
+        <div class="card-body bg-light divTitleAndDescription">
+            <h5 class="card-title">{{movie.name}}</h5>
+            <textarea class="areaDescription" ng-model="movie.description" maxlength="500">{{movie.description}}</textarea>
+            <button class="btn btn-info" ng-click="vm.showModal(movie.description , movie._id)">Alterar Descrição</button>
+            <button class="btn btn-danger" ng-click="vm.deleteMovie(movie._id)">Deletar</button>
+        </div>
+    </div>
+
+    <div ng-if="!vm.movies.length ">
+        <p class="text-center ">Não há dados cadastrados</p>
+    </div>
+
+</body>
+
+</html>
